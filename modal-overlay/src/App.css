@@ -1,0 +1,118 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+body, #root {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.app-wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.show-offer-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2rem;
+  background-color: darkgray;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-message {
+  margin-top: 4rem;
+  font-size: larger;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.accept-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.confirmation-message {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .app-wrapper {
+    padding: 1rem;
+  }
+
+  .modal-box {
+    padding: 1.5rem;
+    margin: 0rem 1rem;
+  }
+  .modal-message{
+    padding: 1rem;
+  }
+
+  .close-button {
+    top: 5px;
+    left: 5px;
+  }
+}

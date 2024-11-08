@@ -78,7 +78,7 @@ function App() {
       {resultCalculated && (
         <div className="result">
           <h2>
-            Your monthly mortgage payment will be :{" "}
+            Your monthly mortgage payment will be {" "}
             <span style={{color: "blue"}}>${monthlyPayment}</span>{" "}
           </h2>
         </div>
