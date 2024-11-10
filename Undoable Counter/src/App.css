@@ -1,0 +1,161 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.undo-redo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.undo-redo button {
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.undo-redo button:disabled {
+  opacity: 0.5;
+  background: #f0f0f0;
+}
+
+.negative-positive {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.negative-positive button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  min-width: 80px;
+}
+
+.negative-positive button:hover {
+  background: #f0f0f0;
+}
+
+.display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 2rem;
+  min-width: 120px;
+}
+
+.history-block {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.history-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.block {
+  border: 2px solid #000;
+  padding: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  width: 100%;
+}
+
+.block div {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .negative-positive {
+    gap: 0.5rem;
+  }
+
+  .negative-positive button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    min-width: 60px;
+  }
+
+  .display {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+    min-width: 100px;
+  }
+
+  .block {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .undo-redo button {
+    min-width: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+  }
+  .negative-positive{
+    display: flex;
+
+  }
+
+  .display {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+  }
+
+  .block div {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}
