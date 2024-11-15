@@ -39,17 +39,17 @@ function App() {
     return
   };
 
-  const handleInput = (e) => {
-    const value = parseInt(e.target.value);
+const handleInput = (e) => {
+  const value = Math.max(0, parseInt(e.target.value) || 0);  
+  if (e.target.id === "hours") {
+    setHours(value);
+  } else if (e.target.id === "minutes") {
+    setMinutes(value);
+  } else if (e.target.id === "seconds") {
+    setSeconds(value);
+  }
+};
 
-    if (e.target.id === "hours") {
-      setHours(value);
-    } else if (e.target.id === "minutes") {
-      setMinutes(value);
-    } else if (e.target.id === "seconds") {
-      setSeconds(value);
-    }
-  };
 
   const runTimer = (sec, min, hr, tid) => {
     if (sec > 0) {
@@ -68,17 +68,22 @@ function App() {
   };
 
   useEffect(() => {
-    let tid;
-    if (isStart) {
-      tid = setInterval(() => {
-        runTimer(seconds, minutes, hours, timerId);
+    if (isStart && !isPaused) {
+      const tid = setInterval(() => {
+        setSeconds((s) => {
+          if (s > 0) return s - 1;
+          setMinutes((m) => {
+            if (m > 0) return m - 1;
+            setHours((h) => (h > 0 ? h - 1 : 0));
+            return 59;
+          });
+          return 59;
+        });
       }, 1000);
-      setTimerId(tid);
+
+      return () => clearInterval(tid);
     }
-    return () => {
-      clearInterval(tid);
-    };
-  }, [isStart, hours, minutes, seconds]);
+  }, [isStart, isPaused]);
 
   return (
     <>
