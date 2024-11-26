@@ -64,7 +64,7 @@ function App() {
       <h1>Shopping List</h1>
       <div className="container">
         <div className="inputbox">
-          <input type="text" onChange={handleChange} />
+          <input type="text" onChange={handleChange} placeholder="enter your food suggestion" />
         </div>
         {food ? (
           <div className="shopping-list" onClick={handleShoppingList}>

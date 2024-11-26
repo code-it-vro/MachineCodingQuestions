@@ -24,15 +24,19 @@ body {
   border: 2px solid #000;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
+/* Center the H1 */
 h1 {
+  text-align: center;
   margin-bottom: 1.5rem;
   color: #000;
   font-size: 1.75rem;
 }
 
+/* Input Box Styling */
 .inputbox {
   margin-bottom: 1rem;
 }
@@ -47,12 +51,14 @@ input {
   letter-spacing: 0.5px;
 }
 
-.shopping-list {
-  margin-top: 1rem;
-  max-height: 250px;
-  overflow-y: auto;
-  border: 1px solid #000;
+/* Suggestions Section */
+.suggestions {
+  margin-top: 0.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .product {
@@ -70,6 +76,7 @@ input {
   background-color: #f0f0f0;
 }
 
+/* Bucket Section */
 .bucket {
   margin-top: 1rem;
   max-height: 300px;
@@ -118,6 +125,28 @@ button:hover {
   color: #888;
 }
 
+/* Scrollbar Styling */
+.suggestions::-webkit-scrollbar,
+.bucket::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions::-webkit-scrollbar-track,
+.bucket::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.suggestions::-webkit-scrollbar-thumb,
+.bucket::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.suggestions::-webkit-scrollbar-thumb:hover,
+.bucket::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 480px) {
   #root {
@@ -140,26 +169,4 @@ button:hover {
   .bucket-items > div {
     font-size: 0.9rem;
   }
-}
-
-/* Scrollbar Styling for Webkit browsers */
-.shopping-list::-webkit-scrollbar,
-.bucket::-webkit-scrollbar {
-  width: 6px;
-}
-
-.shopping-list::-webkit-scrollbar-track,
-.bucket::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.shopping-list::-webkit-scrollbar-thumb,
-.bucket::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.shopping-list::-webkit-scrollbar-thumb:hover,
-.bucket::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
