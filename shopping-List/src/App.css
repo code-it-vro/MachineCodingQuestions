@@ -1,5 +1,165 @@
-#root {
-  margin: 0 ;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+.container {
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-size: 1.75rem;
+}
+
+.inputbox {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #000;
+  border-radius: 6px;
   text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.shopping-list {
+  margin-top: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.product {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.product:last-child {
+  border-bottom: none;
+}
+
+.product:hover {
+  background-color: #f0f0f0;
+}
+
+.bucket {
+  margin-top: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.bucket-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.bucket-items:last-child {
+  border-bottom: none;
+}
+
+.bucket-items > div {
+  flex-grow: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 0.5rem;
+  max-width: calc(100% - 100px);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+  padding: 0.25rem;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .bucket-items > div {
+    font-size: 0.9rem;
+  }
+}
+
+/* Scrollbar Styling for Webkit browsers */
+.shopping-list::-webkit-scrollbar,
+.bucket::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shopping-list::-webkit-scrollbar-track,
+.bucket::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.shopping-list::-webkit-scrollbar-thumb,
+.bucket::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.shopping-list::-webkit-scrollbar-thumb:hover,
+.bucket::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
